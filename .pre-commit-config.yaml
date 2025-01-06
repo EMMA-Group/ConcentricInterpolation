@@ -1,0 +1,18 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.3.0
+  hooks:
+    - id: check-xml
+    - id: check-merge-conflict
+    - id: mixed-line-ending
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+
+# specifying a .cmake-format.yaml fails with python missing the yaml module
+- repo: https://github.com/cheshirekow/cmake-format-precommit
+  rev: v0.6.13
+  hooks:
+  - id: cmake-format
+    exclude: cmake/modules/
+  - id: cmake-lint
+    exclude: cmake/modules/
